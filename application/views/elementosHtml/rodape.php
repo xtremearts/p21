@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Tiago
- * Date: 20/08/2019
- * Time: 19:30
- */
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                2019 © All Blacks - Haka.
+            </div>
+        </div>
+    </div>
+</footer>
