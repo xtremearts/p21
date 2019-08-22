@@ -57,5 +57,35 @@ class importarXml extends CI_Controller
             $this->ImportarXml_model->validarEInserirTorcedor($data);
         }
     }
-
+    
+    
+    function uploadXml(){
+        $curriculo    = $_FILES['importarXml'];
+               
+        $configuracao = array(
+            'upload_path'   => 'assets/xml_temporario/',
+            'allowed_types' => 'xml',
+            'file_name'     => 'xml_temporario.xml',
+            'max_size'      => '500'
+        );
+        $this->load->library('upload');
+        $this->upload->initialize($configuracao);
+        if ($this->upload->do_upload('importarXml')){
+            echo 'Arquivo salvo com sucesso.';
+            $this->importarXml();
+            redirect('torcedores/');
+        }
+            else{
+                
+                
+                echo $this->upload->display_errors();
+                echo $diretorioXml;
+            }
+    }
+    
+    
+    
+    
+    
+    
 }
